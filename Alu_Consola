@@ -1,0 +1,381 @@
+nt A, B, C, D;
+
+int a1 = 8;
+int b1 = 9;
+int c1 = 10;
+int d1 = 11;
+int e1 = 12;
+int f1 = 13;
+int g1 = A0;
+int p1 = A1;
+int t1 = A2;
+int t2 = A3;
+
+void apagarTodo() {
+  digitalWrite(a1,LOW);//A
+  digitalWrite(b1,LOW);//B
+  digitalWrite(c1,LOW);//C
+  digitalWrite(d1,LOW);//D
+  digitalWrite(e1,LOW);//E
+  digitalWrite(f1,LOW);//F
+  digitalWrite(g1,LOW);//G
+}
+
+void cero(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(t1,HIGH);
+  digitalWrite(g1,LOW);
+  digitalWrite(t2,LOW);
+  digitalWrite(t1,HIGH);
+}
+
+void uno(){
+  digitalWrite(a1,LOW);
+  digitalWrite(d1,LOW);
+  digitalWrite(e1,LOW);
+  digitalWrite(f1,LOW);
+  digitalWrite(g1,LOW);
+
+
+  digitalWrite(b1,HIGH);
+  digitalWrite(c1,HIGH);
+  digitalWrite(t1,HIGH);
+  digitalWrite(t2,LOW);
+  digitalWrite(t1,HIGH);
+}
+
+void unoC(){
+  digitalWrite(b1,HIGH);
+  digitalWrite(c1,HIGH);
+  digitalWrite(a1,LOW);
+  digitalWrite(f1,LOW);
+  digitalWrite(g1,LOW);
+  digitalWrite(e1,LOW);
+  digitalWrite(d1,LOW);
+  digitalWrite(g1,LOW);
+}
+
+void dos(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+
+  digitalWrite(f1,LOW);
+  digitalWrite(c1,LOW);
+
+}
+
+void tres(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+  digitalWrite(f1,LOW);
+  digitalWrite(e1,LOW);
+}
+
+void cuatro(){
+  digitalWrite(b1,HIGH);//C
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+
+  digitalWrite(a1,LOW);
+  digitalWrite(e1,LOW);
+  digitalWrite(d1,LOW);
+}
+
+void cinco(){
+  digitalWrite(a1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+
+  digitalWrite(b1,LOW);
+  digitalWrite(e1,LOW);
+  
+}
+
+void seis(){
+  digitalWrite(a1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+  digitalWrite(b1,LOW);
+}
+
+void siete(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+
+  digitalWrite(f1,LOW);
+  digitalWrite(e1,LOW);
+  digitalWrite(d1,LOW);
+}
+
+void ocho(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+}
+
+void nueve(){
+  digitalWrite(a1,HIGH);//A
+  digitalWrite(b1,HIGH);//B
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(e1,LOW);//C
+  digitalWrite(d1,LOW);//C
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,HIGH);//F
+  digitalWrite(t2,LOW);//F
+}
+
+void error(){
+  digitalWrite(a1,HIGH);//B
+  digitalWrite(d1,HIGH);//D
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t1,LOW);//F
+  digitalWrite(t2,HIGH);//F
+
+  digitalWrite(b1,LOW);
+  digitalWrite(c1,LOW);
+
+}
+
+void infinito(){
+  digitalWrite(b1,HIGH);//A
+  digitalWrite(c1,HIGH);//C
+  digitalWrite(e1,HIGH);//E
+  digitalWrite(f1,HIGH);//F
+  digitalWrite(t1,LOW);//F
+  digitalWrite(t2,LOW);//F
+
+  digitalWrite(a1,LOW);
+  digitalWrite(g1,LOW);
+  digitalWrite(d1,LOW);
+}
+
+void signo(){
+  digitalWrite(a1,LOW);
+  digitalWrite(b1,LOW);
+  digitalWrite(c1,LOW);
+  digitalWrite(d1,LOW);
+  digitalWrite(e1,LOW);
+  digitalWrite(f1,LOW);
+
+  digitalWrite(g1,HIGH);//G
+  digitalWrite(t2,HIGH);//F
+  digitalWrite(t1,LOW);
+  
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(a1,OUTPUT);//A
+  pinMode(b1,OUTPUT);//B
+  pinMode(c1,OUTPUT);//C
+  pinMode(d1,OUTPUT);//D
+  pinMode(e1,OUTPUT);//E
+  pinMode(f1,OUTPUT);//F
+  pinMode(g1,OUTPUT);//G
+  pinMode(p1,OUTPUT);//punto
+  pinMode(t1,OUTPUT);//tierra 1
+  pinMode(t2,OUTPUT);//tierra 2
+    while (!Serial);
+}
+
+void loop() {
+  String input;
+  
+  while (Serial.available() > 0) {
+    char discardChar = Serial.read();
+  }
+
+  // Esperar a que el usuario ingrese la expresión
+  while (Serial.available() == 0);
+
+  // Leer la entrada del usuario desde la consola
+  input = Serial.readStringUntil('\n');
+  input.trim();
+
+  char operador[3];
+  if (sscanf(input.c_str(), "%1d %1d %2s %1d %1d", &A, &B, operador, &C, &D) == 5) {
+    int resultado;
+    if (strcmp(operador, "+") == 0) {
+      resultado = (A * 2 + B) + (C * 2 + D);
+      switch (resultado){
+        case 0: cero();   break;
+        case 1: uno();    break;
+        case 2: dos();    break;
+        case 3: tres();   break;
+        case 4: cuatro(); break;
+        case 5: cinco();  break;
+        case 6: seis();   break;
+
+      }
+      
+    } else if (strcmp(operador, "-") == 0) {
+      resultado = (A * 2 + B) - (C * 2 + D);
+      switch (resultado){
+        case 0: cero();   break;
+        case 1: uno();    break;
+        case 2: dos();    break;
+        case 3: tres();   break;
+        case 4: cuatro(); break;
+        case 5: cinco();  break;
+        case 6: seis();   break;
+        case -1:
+          //    apagarTodo();
+              for (int i = 0;i <110;i++)
+                {
+                signo();
+                delay(10);  
+                //apagarTodo();
+                uno();
+                delay(10);
+                }
+                apagarTodo();
+              break;
+        case -2: 
+              for (int i = 0;i <110;i++)
+                {
+                signo();
+                delay(10);  
+                //apagarTodo();
+                dos();
+                delay(10);
+                }
+                apagarTodo(); 
+        break;
+        case -3: 
+                      for (int i = 0;i <110;i++)
+                {
+                signo();
+                delay(10);  
+                //apagarTodo();
+                tres();
+                delay(10);
+                }
+                apagarTodo();
+        break;
+      }
+    } else if (strcmp(operador, "*") == 0) {
+      resultado = (A * 2 + B) * (C * 2 + D);
+        switch (resultado){
+        case 0: cero();   break;
+        case 1: uno();    break;
+        case 2: dos();    break;
+        case 3: tres();   break;
+        case 4: cuatro(); break;
+        case 5: cinco();  break;
+        case 6: seis();   break;
+        case 7: siete();  break; 
+        case 8: ocho();   break;
+        case 9: nueve();  break;
+      }
+    } else if (strcmp(operador, "/") == 0) {
+      if ((A * 2 + B) == 0 && (C * 2 + D) == 0){
+        Serial.println("Error: División 00/00");
+        error();
+      }
+      else if ((C * 2 + D) != 0) {
+        resultado = (A * 2 + B) / (C * 2 + D);
+                switch (resultado){
+        case 0: cero();   break;
+        case 1: uno();    break;
+        case 2: dos();    break;
+        case 3: tres();   break;
+        case 4: cuatro(); break;
+        case 5: cinco();  break;
+        case 6: seis();   break;
+        case 7: siete();  break; 
+        case 8: ocho();   break;
+        case 9: nueve();  break;
+      }
+      } else {
+        Serial.println("Error: División por cero");
+        infinito();
+        return;  // Salir de la función loop() y continuar con la siguiente iteración
+      }
+    } else if (strcmp(operador, "&&") == 0) {
+      resultado = A && B;
+    } else if (strcmp(operador, "||") == 0) {
+      resultado = A || B;
+    } else if (strcmp(operador, "^") == 0) {
+      resultado = (A ^ B);
+    } else {
+      Serial.println("Operador no válido");
+      return;  
+    }
+    Serial.print("Resultado Enviado al display ");
+  } else if (sscanf(input.c_str(), "%1d %2s %1d , %1d %2s %1d", &A, operador, &B, &C, operador, &D) == 6) {
+    int resultado1, resultado2;
+    if (strcmp(operador, "&&") == 0) {
+      resultado1 = A && B;
+      resultado2 = C && D;
+    } else if (strcmp(operador, "||") == 0) {
+      resultado1 = A || B;
+      resultado2 = C || D;
+    } else if (strcmp(operador, "^") == 0) {
+      resultado1 = A ^ B;
+      resultado2 = C ^ D;
+    } else {
+      Serial.println("Operador lógico no válido");
+      return;  // Salir de la función loop() y continuar con la siguiente iteración
+    }
+
+    Serial.print("Resultado 1 Enviado al display");
+
+    if(resultado1 == 1){
+      digitalWrite(t1, LOW);
+      unoC();
+    }else{
+      digitalWrite(t1, HIGH);
+    }
+    Serial.print("Resultado 2 Enviado al display");
+
+    if(resultado2 == 1){
+      digitalWrite(t2, LOW);
+      unoC();
+    }else{
+      digitalWrite(t2, HIGH);
+    }
+  } else {
+    Serial.println("Entrada no válida. Use el formato 'AB signo CD' para operaciones aritméticas o lógicas.");
+  }
+}
+
