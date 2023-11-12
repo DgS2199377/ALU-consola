@@ -225,10 +225,8 @@ void loop() {
     char discardChar = Serial.read();
   }
 
-  // Esperar a que el usuario ingrese la expresión
   while (Serial.available() == 0);
 
-  // Leer la entrada del usuario desde la consola
   input = Serial.readStringUntil('\n');
   input.trim();
 
@@ -259,12 +257,10 @@ void loop() {
         case 5: cinco();  break;
         case 6: seis();   break;
         case -1:
-          //    apagarTodo();
               for (int i = 0;i <110;i++)
                 {
                 signo();
                 delay(10);  
-                //apagarTodo();
                 uno();
                 delay(10);
                 }
@@ -275,7 +271,6 @@ void loop() {
                 {
                 signo();
                 delay(10);  
-                //apagarTodo();
                 dos();
                 delay(10);
                 }
@@ -286,7 +281,6 @@ void loop() {
                 {
                 signo();
                 delay(10);  
-                //apagarTodo();
                 tres();
                 delay(10);
                 }
@@ -329,7 +323,7 @@ void loop() {
       } else {
         Serial.println("Error: División por cero");
         infinito();
-        return;  // Salir de la función loop() y continuar con la siguiente iteración
+        return;  
       }
     } else if (strcmp(operador, "&&") == 0) {
       resultado = A && B;
@@ -355,7 +349,7 @@ void loop() {
       resultado2 = C ^ D;
     } else {
       Serial.println("Operador lógico no válido");
-      return;  // Salir de la función loop() y continuar con la siguiente iteración
+      return;  
     }
 
     Serial.print("Resultado 1 Enviado al display");
